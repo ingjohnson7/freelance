@@ -25,7 +25,11 @@
                 <label>Date:</label>
                 <input type="date" class="form-control" id="date" name="date" required>
                 <label>Service:</label>
-                <input type="text" class="form-control" id="service" name="service" required>
+                <select  class="form-control" id="service" name="service">
+                    <option value="WebPage">Web page</option>
+                    <option value="WebApp">Web app</option>
+                    <option value="MobileApp">Mobile app</option>
+                </select>
                 <label>Photo:</label>
                 <input type="file" class="form-control" id="photo" name="photo" required>
                 <button type="submit" id="btnSave" class="btn btn-info">Save</button>
