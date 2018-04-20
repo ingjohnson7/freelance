@@ -13,12 +13,12 @@
 </head>
 <body>
     <div class="container">
-        <form enctype="multipart/form-data" method="post" action="process.php">
+        <form enctype="multipart/form-data">
             <div class="col-sm-5 well">
                 <label>Project title:</label>
-                <input type="text" class="form-control" id="project" name="project" required>
+                <input type="text" class="form-control" id="title" name="project" required>
                 <label>Description:</label>
-                <textarea class="form-control" rows="6" cols="15" id="detail" name="detail" required>
+                <textarea class="form-control" rows="6" cols="15" id="description" name="detail" required>
                 </textarea>
                 <label>Client:</label>
                 <input type="text" class="form-control" id="client" name="client" required>
@@ -31,13 +31,15 @@
                     <option value="MobileApp">Mobile app</option>
                 </select>
                 <label>Photo:</label>
-                <input type="file" class="form-control" id="photo" name="photo" required>
+                <input type="file" class="form-control" id="image" name="photo" required>
                 <button type="submit" id="btnSave" class="btn btn-info">Save</button>
                 
             </div>
         </form>
         
     </div>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
     
+  <script src="../js/main.js"></script>  
 </body>
 </html>
