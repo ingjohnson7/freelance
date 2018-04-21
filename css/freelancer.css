@@ -562,3 +562,8 @@ header .img-responsive{
     transform: rotateY(360deg);
   }
 }
+
+.img-portfolio{
+  width: 500px;
+  height: 300px;
+}

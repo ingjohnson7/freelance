@@ -108,37 +108,10 @@
                     <hr class="star-primary">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/cake.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/circus.png" class="img-responsive" alt="">
-                    </a>
-                </div>                   
+            <div id="portfolio-list">
+
+
+                           
             </div>
         </div>
     </section>
@@ -287,25 +260,20 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2 class="traducible" key="project_title">Project Title</h2>
+                            <h2 class="traducible" key="project_title" id="project-title">Project Title</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
+                            <img src="" id="project-img" class="img-responsive img-centered" alt="">
 
-                            <p>DESCRIPTION
+                            <p id="project-description">DESCRIPTION
                             </p>
                             
                             <ul class="list-inline item-details">
-                                <li><span class="traducible" key="client">Client</span>:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
+                                
+                                <li><span class="traducible" key="date">>Date</span>: <kbd id="project-date"></kbd>
+
                                 </li>
-                                <li><span class="traducible" key="date">Date</span>:
-                                    <strong>April 2014
-                                    </strong>
-                                </li>
-                                <li><span class="traducible" key="service">Service</span>:
-                                    <strong>Web Development
-                                    </strong>
+                                <li><span class="traducible" key="service">Service</span>: <kbd id="project-service"></kbd>
+    
                                 </li>
                             </ul>
                             
@@ -341,6 +309,7 @@
     <!-- Translator JavaScript -->
     <script src="js/translate.js"></script>
 
+    <script src="js/init.js"></script> 
     <script src="js/main.js"></script>
     
 
