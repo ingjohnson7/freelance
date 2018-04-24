@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <form enctype="multipart/form-data" id="portfolio-form">
-            <div class="col-sm-5 well">
+            <div class="col-sm-10 well">
                 <label>Project title:</label>
                 <input type="text" class="form-control" id="title" name="project" required>
                 <label>Description:</label>
@@ -31,7 +31,7 @@
                     <option value="MobileApp">Mobile app</option>
                 </select>
                 <label>Photo:</label>
-                <input type="file" class="form-control" id="image" name="photo" required>
+                <input type="file" class="form-control" id="image" name="photo[]" required multiple>
                 <button type="submit" id="btnSave" class="btn btn-info">Save</button>
                 
             </div>
@@ -40,6 +40,6 @@
     </div>
     <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
     <script src="../js/init.js"></script>  
-  <script src="../js/main.js"></script>  
+  <script src="app.js"></script>  
 </body>
 </html>

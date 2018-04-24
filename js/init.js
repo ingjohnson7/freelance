@@ -12,4 +12,4 @@ var config = {
 firebase.initializeApp(config);
 
 var portfolioRef = firebase.database().ref('portfolio/');
-var messasgeRef = firebase.database().ref('message/');
+var db = firebase.database();

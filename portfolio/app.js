@@ -2,8 +2,6 @@ document.querySelector('#portfolio-form').addEventListener('submit', e => {
     
     addProjectToPortfolio();
 
-    //getAllPortfolios();
-
     e.preventDefault();
 });
 
@@ -15,32 +13,66 @@ function addProjectToPortfolio() {
     let client = document.querySelector('#client');
     let date = document.querySelector('#date');
     let service = document.querySelector('#service');
-    let image = document.querySelector('#image').files[0];
+    let images = document.querySelector('#image').files;
 
-    //const project = new Portfolio(title, image, description, client, date, service);
+    console.log(images);
 
-    //console.log(project);
+    project = {
+        "title": title.value,
+        "description": description.value,
+        "client": client.value,
+        "date": date.value,
+        "service": service.value
+    };
 
-    imageToBase64(image).then(baseEnconded => {
-        //console.log(baseEnconded);
+    let newItem = portfolioRef.push(project);
+
+    saveImages(images, newItem.key)
+
+    title.value = '';
+    description.value = '';
+    client.value = '';        
+
+}
+
+
+function imageToBase64(image) {
+
+    return new Promise(resolve => {
+
+        var fr = new FileReader;
+
+        fr.onload = function() { // file is loaded
+            var img = new Image;
         
-        project = {
-            "title": title.value,
-            "description": description.value,
-            "client": client.value,
-            "date": date.value,
-            "service": service.value,
-            "image": baseEnconded
+            img.onload = function() {
+                resolve(img.src);
+            };
+        
+            img.src = fr.result; // is the data URL because called with readAsDataURL
         };
-
-        portfolioRef.push(project);
-
-        title.value = '';
-        description.value = '';
-        client.value = '';
         
+        fr.readAsDataURL(image);
+
     });
     
+}
 
+function saveImages(imagesArray, key) {
+
+    imagesArray = Array.from(imagesArray);
+
+    imagesArray.forEach(image => {
+        
+        imageToBase64(image).then(baseEnconded => {
+            
+            db.ref('images/').push({
+                'key': key,
+                'image': baseEnconded
+            });            
+
+        });
+
+    });
 
 }
